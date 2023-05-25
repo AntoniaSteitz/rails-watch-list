@@ -1,7 +1,6 @@
 class ListsController < ApplicationController
-  def home
+  def index
     @lists = List.all
-    @movies_list = Movie.rand(1..3)
   end
 
   def show
