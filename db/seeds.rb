@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+List.create(name: "Old Movies")
+List.create(name: "Fantasy Movies")
+List.create(name: "Action Movies")
+List.create(name: "Coming of Age Movies")
+
+puts 'Creating 100 fake movies...'
+100.times do
+  movie = Movie.new(
+    title: Faker::Movie.title,
+    overview: Faker::Lorem.sentence,
+    poster_url: Faker::LoremFlickr.image,
+    rating: rand(0..10)
+  )
+  movie.save!
+end
+puts 'Finished!'
