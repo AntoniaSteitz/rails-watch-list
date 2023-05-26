@@ -1,0 +1,12 @@
+<div class="container">
+<h1>Create a new Bookmark and add a movie to your <%= @list.name %></h1>
+  <%= simple_form_for [@list, @bookmark] do |f| %>
+    <%= f.input :comment, placeholder: 'What are your thoughts about the movie?' %>
+    <%= f.association :movie, prompt: "Type in your movie title", input_html: {data: { controller: "tom-select"}} %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+
+  <div>
+    <a href="#" class="link-dark"><%= link_to 'Go back to my list', list_path(@list) %></a>
+  </div>
+</div>
